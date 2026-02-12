@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>(IN)CONTINUIDADE — Caso Vodafone Portugal</title>
+  <meta name="description" content="Relato factual e documentado de uma interrupção prolongada de serviço essencial. Cronologia, estado atual e documentos." />
+
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --panel:#0f1117;
+      --ink:#f2f3f7;
+      --muted:#a9afc3;
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.16);
+      --warn:#ffcc00;
+      --bad:#ff4d4d;
+      --ok:#8cffb0;
+      --accent:#d8d8ff;
+      --maxw: 1120px;
+      --r: 18px;
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(216,216,255,.14), transparent 55%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(255,204,0,.10), transparent 60%),
+                  radial-gradient(800px 500px at 50% 100%, rgba(140,255,176,.07), transparent 55%),
+                  var(--bg);
+      color: var(--ink);
+      line-height:1.35;
+      letter-spacing:.2px;
+    }
+
+    a{color:inherit; text-decoration:none; border-bottom:1px solid rgba(216,216,255,.45)}
+    a:hover{border-bottom-color:rgba(255,255,255,.65)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 18px 80px}
+
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 0 10px; border-bottom:1px solid var(--line);
+      position:sticky; top:0; backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,12,15,.92), rgba(11,12,15,.78));
+      z-index:10;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:baseline;
+    }
+    .brand .mark{
+      font-weight:800; letter-spacing:2px; font-size:14px; color:var(--accent);
+      text-transform:uppercase;
+    }
+    .brand .case{
+      font-weight:700; font-size:13px; color:var(--muted);
+      letter-spacing:.6px; text-transform:uppercase;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:12px; color:var(--muted);
+      border-bottom:1px solid transparent; padding:6px 0;
+      text-transform:uppercase; letter-spacing:1.3px;
+    }
+    nav a:hover{color:var(--ink); border-bottom-color:rgba(255,255,255,.35)}
+
+    /* Hero */
+    .hero{padding:34px 0 16px}
+    .kicker{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      margin:6px 0 12px;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border:1px solid var(--line2);
+      border-radius:999px; font-size:12px; color:var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{width:8px; height:8px; border-radius:50%; background:rgba(216,216,255,.7)}
+    h1{
+      margin:10px 0 10px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: .95;
+      letter-spacing: -1.2px;
+      font-weight: 860;
+      text-transform:uppercase;
+    }
+    .subtitle{
+      max-width: 78ch;
+      font-size: 16px;
+      color: var(--muted);
+      margin: 14px 0 18px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .heroGrid{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+    .card .in{padding:18px}
+    .card h2{
+      margin:0 0 10px;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+      color: var(--accent);
+    }
+
+    .bigStat{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      padding: 6px 0 2px;
+      border-top:1px dashed rgba(255,255,255,.14);
+      margin-top:12px;
+    }
+    .bigStat .n{
+      font-size: 44px;
+      font-weight: 860;
+      letter-spacing: -1px;
+    }
+    .bigStat .lbl{
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding-bottom: 10px;
+    }
+
+    .btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--line2);
+      background: rgba(255,255,255,.04);
+      font-size:12px; text-transform:uppercase; letter-spacing:1.2px;
+      color:var(--ink);
+    }
+    .btn.primary{
+      border-color: rgba(216,216,255,.55);
+      background: linear-gradient(180deg, rgba(216,216,255,.14), rgba(255,255,255,.04));
+    }
+    .btn:hover{transform: translateY(-1px); transition:.12s}
+
+    /* Status */
+    .statusGrid{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    @media (max-width: 860px){ .statusGrid{grid-template-columns:1fr} }
+
+    .pill{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(0,0,0,.18);
+    }
+    .pill b{
+      font-size:12px; text-transform:uppercase; letter-spacing:1.2px;
+    }
+    .state{
+      font-size:12px; letter-spacing:1.1px; text-transform:uppercase;
+      padding:6px 10px; border-radius:999px; border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .state.bad{border-color: rgba(255,77,77,.45); color: rgba(255,77,77,.92)}
+    .state.warn{border-color: rgba(255,204,0,.45); color: rgba(255,204,0,.92)}
+    .state.ok{border-color: rgba(140,255,176,.45); color: rgba(140,255,176,.92)}
+
+    /* Sections */
+    section{margin-top:22px}
+    .sectionTitle{
+      margin:28px 0 12px;
+      display:flex; align-items:baseline; justify-content:space-between; gap:14px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+    .sectionTitle h3{
+      margin:0;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      color: var(--accent);
+    }
+    .sectionTitle span{
+      color: var(--muted);
+      font-size:12px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+    }
+
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    @media (max-width: 860px){ .grid2{grid-template-columns:1fr} }
+
+    .text{
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 90ch;
+    }
+
+    /* Timeline */
+    .timeline{
+      border-left: 1px solid var(--line2);
+      margin-left: 8px;
+      padding-left: 16px;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .ev{
+      position:relative;
+      padding:14px 14px;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+    }
+    .ev::before{
+      content:"";
+      position:absolute;
+      left:-22px; top:18px;
+      width:10px; height:10px;
+      border-radius:50%;
+      background: rgba(216,216,255,.8);
+      box-shadow: 0 0 0 4px rgba(216,216,255,.08);
+    }
+    .evHead{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+    .evHead b{
+      font-size:12px; text-transform:uppercase; letter-spacing:1.3px; color: var(--ink);
+    }
+    .evHead i{
+      font-style:normal;
+      font-size:12px; color: var(--muted);
+      text-transform:uppercase; letter-spacing:1.2px;
+    }
+    .ev p{margin:0; color: var(--muted); font-size:14px}
+
+    /* Table */
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    th,td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--line);
+      font-size:13px;
+      color: var(--muted);
+      vertical-align:top;
+    }
+    th{
+      color: var(--accent);
+      text-transform:uppercase;
+      letter-spacing:1.3px;
+      font-size:12px;
+      background: rgba(0,0,0,.12);
+    }
+    tr:last-child td{border-bottom:none}
+
+    /* Quote block */
+    .quote{
+      padding:14px 14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-size:14px;
+    }
+    .quote b{color:var(--ink)}
+    .quote .small{font-size:12px; text-transform:uppercase; letter-spacing:1.2px; color: var(--accent); display:block; margin-bottom:6px}
+
+    /* Footer note */
+    footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .legal{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius: 16px;
+      padding:12px 12px;
+      margin-top:12px;
+    }
+    .legal b{color:var(--ink)}
+    .tiny{opacity:.9}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark">(IN)CONTINUIDADE</div>
+        <div class="case">Caso Vodafone Portugal</div>
+      </div>
+      <nav>
+        <a href="#estado">Estado</a>
+        <a href="#cronologia">Cronologia</a>
+        <a href="#contrato">Contratado vs Entregue</a>
+        <a href="#infra">Infraestrutura</a>
+        <a href="#docs">Documentos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+
+    <header class="hero" id="topo">
+      <div class="kicker">
+        <span class="tag"><span class="dot"></span> Relato factual • cronologia • documentos</span>
+        <span class="tag">Portugal • serviço essencial • caso em evolução</span>
+      </div>
+
+      <h1>(IN)CONTINUIDADE</h1>
+
+      <p class="subtitle">
+        A interrupção começou com um evento climatérico severo. O que se seguiu é o que aqui se documenta:
+        prazos, comunicações, reposição parcial e estado real do serviço — <span class="mono">sem adjectivos, sem acusações criminais</span>, só factos verificáveis.
+      </p>
+
+      <div class="heroGrid">
+        <div class="card">
+          <div class="in">
+            <h2>Contexto</h2>
+            <p class="text">
+              O evento extremo foi real e teve impacto na região. Em situações desta natureza, a continuidade
+              das comunicações deixa de ser “conveniência” e passa a ser <b>infraestrutura</b>.
+              Este site não discute o temporal. Documenta o que aconteceu depois dele.
+            </p>
+
+            <div class="bigStat">
+              <div>
+                <div class="n" id="diasDecorridos">—</div>
+                <div class="lbl">dias desde a interrupção inicial</div>
+              </div>
+              <div class="lbl">Data inicial: <span class="mono" id="dataInicialLabel">—</span></div>
+            </div>
+
+            <div class="btns">
+              <a class="btn primary" href="#cronologia">Ver cronologia</a>
+              <a class="btn" href="#docs">Ver documentos</a>
+              <a class="btn" href="#estado">Ver estado atual</a>
+            </div>
+
+            <p class="text" style="margin-top:12px">
+              <b>Nota sobre emergência:</b> durante o período de indisponibilidade, não existiu telefone fixo funcional
+              e a conectividade alternativa revelou-se instável. Não ocorreu emergência real; regista-se apenas que,
+              num cenário crítico, a indisponibilidade total de comunicações pode aumentar risco operacional.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" id="estado">
+          <div class="in">
+            <h2>Estado atual</h2>
+
+            <div class="statusGrid">
+              <div class="pill">
+                <b>Internet</b>
+                <span class="state warn" id="stInternet">Não conforme</span>
+              </div>
+              <div class="pill">
+                <b>Televisão</b>
+                <span class="state bad" id="stTV">Sem sinal</span>
+              </div>
+              <div class="pill">
+                <b>Telefone fixo</b>
+                <span class="state bad" id="stTel">Inoperacional</span>
+              </div>
+            </div>
+
+            <div class="quote" style="margin-top:12px">
+              <span class="small">Medição (exemplo)</span>
+              <b>Internet parcial</b> com velocidades muito abaixo do contratado
+              <span class="tiny">(substitui pelos teus valores reais e anexa capturas)</span>.
+              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap">
+                <span class="tag">Download: <b class="mono" id="vDown">~6 Mbps</b></span>
+                <span class="tag">Upload: <b class="mono" id="vUp">~12 Mbps</b></span>
+                <span class="tag">Latência sob carga: <b class="mono" id="vLat">~249 ms</b></span>
+              </div>
+            </div>
+
+            <p class="text" style="margin-top:12px">
+              <span class="mono">Objectivo do registo:</span> clarificar a diferença entre “há ligação”
+              e “o serviço está reposto e conforme ao contrato”.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="cronologia">
+      <div class="sectionTitle">
+        <h3>Cronologia</h3>
+        <span>linha temporal factual</span>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="in">
+            <h2>Sumário</h2>
+            <p class="text">
+              A cronologia abaixo regista acontecimentos-chave: interrupção, contactos, propostas, reclamações formais,
+              visita técnica e estado após intervenção. Mantém-se tudo em linguagem factual e verificável.
+            </p>
+
+            <div class="quote" style="margin-top:12px">
+              <span class="small">Regra editorial</span>
+              O que entra aqui deve ser: <b>data</b>, <b>facto</b>, <b>estado</b> e, quando possível, <b>prova anexada</b>.
+              Sem inferências sobre intenções. Sem qualificações pessoais.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="in">
+            <h2>Timeline</h2>
+
+            <div class="timeline">
+              <div class="ev">
+                <div class="evHead">
+                  <b>Dia 1</b>
+                  <i>[data]</i>
+                </div>
+                <p>Interrupção total do serviço fixo (internet, TV e telefone).</p>
+              </div>
+
+              <div class="ev">
+                <div class="evHead">
+                  <b>Dias 2–7</b>
+                  <i>[intervalo]</i>
+                </div>
+                <p>Contactos com apoio ao cliente. Sem prazo firme de reposição. Soluções alternativas instáveis/inadequadas.</p>
+              </div>
+
+              <div class="ev">
+                <div class="evHead">
+                  <b>Dia 8</b>
+                  <i>[data]</i>
+                </div>
+                <p>Reclamação formal submetida (Livro/Portal/Processo interno).</p>
+              </div>
+
+              <div class="ev">
+                <div class="evHead">
+                  <b>Dia 10</b>
+                  <i>[data]</i>
+                </div>
+                <p>Participação submetida à ANACOM (processo: <span class="mono">ROR…</span>).</p>
+              </div>
+
+              <div class="ev">
+                <div class="evHead">
+                  <b>Dia 14</b>
+                  <i>[data]</i>
+                </div>
+                <p>Visita técnica: internet parcialmente restabelecida. TV sem sinal no poste. Telefone fixo inoperacional.</p>
+              </div>
+
+              <div class="ev">
+                <div class="evHead">
+                  <b>Hoje</b>
+                  <i>[data]</i>
+                </div>
+                <p>Estado atual: serviço não reposto integralmente e internet não conforme ao contratado.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contrato">
+      <div class="sectionTitle">
+        <h3>Contratado vs Entregue</h3>
+        <span>diferença mensurável</span>
+      </div>
+
+      <div class="card">
+        <div class="in">
+          <h2>Quadro comparativo</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Elemento</th>
+                <th>Contratado</th>
+                <th>Entregue / Estado</th>
+                <th>Prova</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Internet</b></td>
+                <td>500/100 Mbps</td>
+                <td>~6 Mbps (não conforme)</td>
+                <td>[anexar speedtest + data/hora]</td>
+              </tr>
+              <tr>
+                <td><b>Televisão</b></td>
+                <td>Incluída no pacote</td>
+                <td>Sem sinal</td>
+                <td>[foto/relato técnico]</td>
+              </tr>
+              <tr>
+                <td><b>Telefone fixo</b></td>
+                <td>Incluído no pacote</td>
+                <td>Inoperacional</td>
+                <td>[teste + data/hora]</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="text" style="margin-top:12px">
+            Nota: “ter alguma ligação” não equivale a “serviço reposto”. O critério aqui é <b>conformidade</b> com o contratado
+            e <b>reposição integral</b> do pacote.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="infra">
+      <div class="sectionTitle">
+        <h3>Infraestrutura & Resiliência</h3>
+        <span>crítica subtil, baseada em contexto</span>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="in">
+            <h2>O ponto</h2>
+            <p class="text">
+              Este caso não exige suposições técnicas para levantar uma pergunta legítima:
+              <b>qual é o nível de robustez e resposta esperado de um operador de grande dimensão</b> quando um evento extremo ocorre?
+              A rede de acesso em muitas zonas depende de infraestrutura exposta a intempérie; isso torna a manutenção e a modernização
+              parte do risco operacional.
+            </p>
+
+            <div class="quote" style="margin-top:12px">
+              <span class="small">Formulação segura</span>
+              Em vez de atribuir intenção, este site limita-se a registar: <b>tempo de reposição</b>, <b>estado do serviço</b> e
+              <b>qualidade entregue</b>. A reflexão sobre resiliência fica ao leitor.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="in">
+            <h2>O que este site NÃO faz</h2>
+            <p class="text">
+              Não afirma causas técnicas específicas sem prova. Não acusa pessoas. Não imputa dolo.
+              Foca-se em factos verificáveis e no impacto prático de um serviço essencial não estar disponível ou não estar conforme.
+            </p>
+
+            <div class="btns">
+              <a class="btn" href="#docs">Anexar evidências</a>
+              <a class="btn" href="#faq">Ver FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="docs">
+      <div class="sectionTitle">
+        <h3>Documentos</h3>
+        <span>provas e referências</span>
+      </div>
+
+      <div class="card">
+        <div class="in">
+          <h2>Lista (preenche e liga)</h2>
+          <p class="text">
+            Recomenda-se ocultar dados pessoais de terceiros (nomes/telemóveis/IDs). Mantém números de processo quando relevante.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Referência</th>
+                <th>Link/Anexo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ANACOM</td>
+                <td>Reclamação submetida</td>
+                <td class="mono">ROR00000000045506368</td>
+                <td><a href="#">[adicionar link/scan]</a></td>
+              </tr>
+              <tr>
+                <td>Portal das Queixas</td>
+                <td>Processo com número interno Vodafone</td>
+                <td class="mono">149948226</td>
+                <td><a href="#">[adicionar link]</a></td>
+              </tr>
+              <tr>
+                <td>Medições</td>
+                <td>Speedtests datados</td>
+                <td class="mono">[datas]</td>
+                <td><a href="#">[imagens]</a></td>
+              </tr>
+              <tr>
+                <td>Relato técnico</td>
+                <td>Visita do técnico: TV sem sinal no poste</td>
+                <td class="mono">[data]</td>
+                <td><a href="#">[nota/scan]</a></td>
+              </tr>
+              <tr>
+                <td>Comunicações</td>
+                <td>Email/Cartas/Respostas</td>
+                <td class="mono">[datas]</td>
+                <td><a href="#">[PDFs]</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="text" style="margin-top:12px">
+            Dica: cria uma pasta <span class="mono">/docs</span> no repositório e coloca lá PDFs/imagens com nomes claros
+            (ex: <span class="mono">2026-02-xx-speedtest.png</span>).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="sectionTitle">
+        <h3>FAQ</h3>
+        <span>para responder ao “mas houve temporal”</span>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="in">
+            <h2>“Mas houve um temporal.”</h2>
+            <p class="text">
+              Sim. O contexto é reconhecido. O ponto documentado aqui é o pós-evento: prazos, reposição integral,
+              conformidade do serviço entregue e capacidade de comunicação com o cliente.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="in">
+            <h2>“Há internet, logo está resolvido.”</h2>
+            <p class="text">
+              A existência de ligação não equivale a reposição integral do pacote, nem garante conformidade com o contrato.
+              Este site regista diferenças mensuráveis e serviços ainda indisponíveis.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="in">
+            <h2>“Isto é difamação?”</h2>
+            <p class="text">
+              O site segue uma regra simples: factos verificáveis, datas e documentos. Sem acusações criminais, sem imputação de dolo,
+              sem ataques pessoais. A interpretação fica ao leitor.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="in">
+            <h2>Como atualizar</h2>
+            <p class="text">
+              Adiciona um novo evento na timeline com data, facto e prova (quando existir). Atualiza o painel “Estado atual”
+              e as medições. Mantém tudo curto e verificável.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="legal">
+        <b>Nota legal:</b> Este site apresenta um relato factual e documentado de acontecimentos reais.
+        Não contém imputações criminais nem juízos de dolo. Os factos descritos correspondem a comunicações verificáveis.
+        <div class="tiny" style="margin-top:8px">
+          Recomenda-se anonimizar dados pessoais de terceiros e não publicar moradas/IDs completos.
+        </div>
+      </div>
+
+      <div style="margin-top:10px" class="tiny">
+        <span class="mono">Versão</span> 0.1 • Estrutura editorial: factual, verificável, atualizável •
+        <a href="#topo">Voltar ao topo</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /**
+     * CONFIG — altera só isto:
+     * Data inicial da interrupção (AAAA-MM-DD).
+     * Ex: "2026-01-29"
+     */
+    const DATA_INICIAL = "2026-01-29"; // <-- MUDA AQUI
+
+    function daysSince(dateStr){
+      const start = new Date(dateStr + "T00:00:00");
+      const now = new Date();
+      const diff = now.getTime() - start.getTime();
+      return Math.max(0, Math.floor(diff / (1000*60*60*24)));
+    }
+
+    function fmtDatePT(dateStr){
+      const d = new Date(dateStr + "T00:00:00");
+      return d.toLocaleDateString("pt-PT", { year:"numeric", month:"2-digit", day:"2-digit" });
+    }
+
+    // Render
+    document.getElementById("diasDecorridos").textContent = String(daysSince(DATA_INICIAL));
+    document.getElementById("dataInicialLabel").textContent = fmtDatePT(DATA_INICIAL);
+
+    // Se quiseres atualizar medições rapidamente:
+    // document.getElementById("vDown").textContent = "~6 Mbps";
+    // document.getElementById("vUp").textContent = "~12 Mbps";
+    // document.getElementById("vLat").textContent = "~249 ms";
+  </script>
+</body>
+</html>
