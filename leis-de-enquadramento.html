@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Leis de Enquadramento — Caso Vodafone Portugal</title>
+  <meta name="description" content="Lista de diplomas legais relevantes para o enquadramento do relato factual e do serviço de comunicações eletrónicas." />
+
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --panel:#0f1117;
+      --ink:#f2f3f7;
+      --muted:#a9afc3;
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.16);
+      --accent:#d8d8ff;
+      --maxw: 960px;
+      --r: 18px;
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(216,216,255,.14), transparent 55%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(255,204,0,.10), transparent 60%),
+                  radial-gradient(800px 500px at 50% 100%, rgba(140,255,176,.07), transparent 55%),
+                  var(--bg);
+      color: var(--ink);
+      line-height:1.35;
+      letter-spacing:.2px;
+    }
+
+    a{color:inherit; text-decoration:none; border-bottom:1px solid rgba(216,216,255,.45)}
+    a:hover{border-bottom-color:rgba(255,255,255,.65)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 18px 80px}
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 0 10px; border-bottom:1px solid var(--line);
+      position:sticky; top:0; backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,12,15,.92), rgba(11,12,15,.78));
+      z-index:10;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:baseline;
+    }
+    .brand .mark{
+      font-weight:800; letter-spacing:2px; font-size:14px; color:var(--accent);
+      text-transform:uppercase;
+    }
+    .brand .case{
+      font-weight:700; font-size:13px; color:var(--muted);
+      letter-spacing:.6px; text-transform:uppercase;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:12px; color:var(--muted);
+      border-bottom:1px solid transparent; padding:6px 0;
+      text-transform:uppercase; letter-spacing:1.3px;
+    }
+    nav a:hover{color:var(--ink); border-bottom-color:rgba(255,255,255,.35)}
+
+    h1{
+      margin:18px 0 10px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: .95;
+      letter-spacing: -1.2px;
+      font-weight: 860;
+      text-transform:uppercase;
+    }
+    .subtitle{
+      max-width: 78ch;
+      font-size: 16px;
+      color: var(--muted);
+      margin: 12px 0 18px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+    .card .in{padding:18px}
+    .card h2{
+      margin:0 0 10px;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+      color: var(--accent);
+    }
+    .text{
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 90ch;
+    }
+    section{margin-top:22px}
+    .sectionTitle{
+      margin:28px 0 12px;
+      display:flex; align-items:baseline; justify-content:space-between; gap:14px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+    .sectionTitle h3{
+      margin:0;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      color: var(--accent);
+    }
+    .sectionTitle span{
+      color: var(--muted);
+      font-size:12px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+    }
+    .list{
+      display:grid;
+      gap:12px;
+    }
+    .item{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    .item b{color:var(--ink)}
+    .item ul{margin:8px 0 0 18px; color:var(--muted)}
+    .item li{margin:4px 0}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+
+    footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .legal{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius: 16px;
+      padding:12px 12px;
+      margin-top:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark">(IN)CONTINUIDADE</div>
+        <div class="case">Caso Vodafone Portugal</div>
+      </div>
+      <nav>
+        <a href="index.html">Voltar à página principal</a>
+      </nav>
+    </div>
+
+    <header>
+      <h1>Leis de Enquadramento</h1>
+      <p class="subtitle">
+        Esta página reúne diplomas e artigos frequentemente citados quando se discute a prestação de serviços de comunicações
+        eletrónicas, a relação contratual, a liberdade de expressão e obrigações correlatas. É um índice informativo, não uma análise jurídica.
+      </p>
+    </header>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>📡 Serviço de comunicações eletrónicas</h3>
+        <span>regime setorial</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>1️⃣ Lei n.º 16/2022, de 16 de agosto — Lei das Comunicações Eletrónicas (LCE)</b>
+          <div class="text">Transpõe o Código Europeu das Comunicações Eletrónicas.</div>
+          <ul>
+            <li>Art. 127.º — Informação contratual obrigatória</li>
+            <li>Art. 128.º — Conteúdo mínimo do contrato</li>
+            <li>Art. 129.º — Alterações contratuais</li>
+            <li>Art. 131.º — Suspensão e cessação</li>
+            <li>Art. 132.º — Compensações e reembolsos</li>
+            <li>Art. 133.º — Qualidade de serviço</li>
+            <li>Art. 135.º — Continuidade de serviço</li>
+            <li>Art. 136.º — Resiliência e segurança das redes</li>
+          </ul>
+          <div class="text">Autoridade competente: ANACOM</div>
+        </div>
+
+        <div class="item">
+          <b>2️⃣ Regulamentos e decisões da ANACOM</b>
+          <ul>
+            <li>Regulamento da Qualidade de Serviço</li>
+            <li>Obrigações de reporte de interrupções</li>
+            <li>Normas sobre compensações automáticas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>📜 Direito contratual e responsabilidade civil</h3>
+        <span>contrato, boa-fé, incumprimento</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>3️⃣ Código Civil</b>
+          <ul>
+            <li>Art. 405.º — Liberdade contratual</li>
+            <li>Art. 406.º — Força obrigatória do contrato</li>
+            <li>Art. 762.º — Princípio da boa-fé</li>
+            <li>Art. 798.º — Responsabilidade por incumprimento</li>
+            <li>Art. 799.º — Presunção de culpa</li>
+            <li>Art. 801.º — Mora</li>
+            <li>Art. 804.º — Indemnização</li>
+            <li>Art. 808.º — Incumprimento definitivo</li>
+            <li>Art. 483.º — Responsabilidade civil extracontratual</li>
+            <li>Art. 484.º — Ofensa ao crédito ou bom nome</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <b>4️⃣ Lei n.º 24/96 — Lei de Defesa do Consumidor</b>
+          <ul>
+            <li>Art. 4.º — Direito à qualidade dos bens e serviços</li>
+            <li>Art. 8.º — Informação</li>
+            <li>Art. 12.º — Responsabilidade do fornecedor</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>🛡 Liberdade de expressão e publicação</h3>
+        <span>direitos e limites</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>5️⃣ Constituição da República Portuguesa</b>
+          <ul>
+            <li>Art. 37.º — Liberdade de expressão</li>
+            <li>Art. 38.º — Liberdade de imprensa</li>
+            <li>Art. 26.º — Direito ao bom nome e reputação</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <b>6️⃣ Código Penal</b>
+          <ul>
+            <li>Art. 180.º — Difamação</li>
+            <li>Art. 183.º — Agravação (meios de divulgação)</li>
+            <li>Art. 187.º — Ofensa a pessoa coletiva</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <b>7️⃣ Lei n.º 2/99 — Lei da Imprensa</b>
+          <div class="text">Pode aplicar-se se o site for considerado publicação periódica.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>🏷 Marca e propriedade industrial</h3>
+        <span>uso nominativo e limites</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>8️⃣ Decreto-Lei n.º 110/2018 — Código da Propriedade Industrial</b>
+          <ul>
+            <li>Art. 210.º — Direitos conferidos pela marca</li>
+            <li>Art. 232.º — Uso indevido</li>
+            <li>Art. 317.º — Concorrência desleal</li>
+          </ul>
+          <div class="text">Empresa relevante: Vodafone Portugal</div>
+          <div class="text">
+            Uso nominativo é permitido, mas não pode criar confusão, aproveitamento parasitário ou dano reputacional injustificado.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>🔐 Proteção de dados</h3>
+        <span>dados pessoais</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>9️⃣ Regulamento (UE) 2016/679 — RGPD</b>
+          <div class="text">Aplicável se publicar nomes de técnicos, emails, dados pessoais ou números de processo associados a pessoas identificáveis.</div>
+          <div class="text">Supervisão: Comissão Nacional de Proteção de Dados</div>
+        </div>
+
+        <div class="item">
+          <b>10️⃣ Lei n.º 58/2019 — Lei de execução do RGPD em Portugal</b>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>📊 Enquadramento europeu setorial</h3>
+        <span>diretivas e regulamentos</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>11️⃣ Diretiva (UE) 2018/1972 — Código Europeu das Comunicações Eletrónicas</b>
+          <div class="text">Transposta pela Lei 16/2022.</div>
+        </div>
+
+        <div class="item">
+          <b>12️⃣ Regulamento (UE) 2015/2120 — Neutralidade da Internet</b>
+          <div class="text">Relevante se houver limitação de velocidade injustificada.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>🧭 Responsabilidade digital</h3>
+        <span>plataformas e notice-and-takedown</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>13️⃣ Regulamento (UE) 2022/2065 — Digital Services Act (DSA)</b>
+          <div class="text">
+            Relevante se o site for alojado em plataforma, houver denúncia e pedido de remoção, ou existir procedimento de notice-and-takedown.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>🧾 Outra legislação potencialmente relevante</h3>
+        <span>contexto adicional</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>14️⃣ Decreto-Lei n.º 84/2021</b>
+          <div class="text">Regime de garantia dos bens e conteúdos digitais. Pode ser discutível se aplicável a serviços de telecom.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>🧱 Infraestruturas críticas e resiliência</h3>
+        <span>segurança e reporte</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <b>15️⃣ Lei n.º 46/2018 — Regime Jurídico da Segurança do Ciberespaço</b>
+          <div class="text">Relevante quanto a obrigações de segurança e reporte.</div>
+          <div class="text">Autoridade envolvida: Centro Nacional de Cibersegurança</div>
+        </div>
+
+        <div class="item">
+          <b>16️⃣ Diretiva NIS2 (UE) 2022/2555</b>
+          <div class="text">Aplicável a operadores de serviços essenciais. Transposição em curso/parcial.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="legal">
+        <b>Nota:</b> Este índice é informativo e não substitui consulta jurídica. Os artigos indicados são listados
+        para facilitar referências e leitura contextual.
+      </div>
+
+      <div style="margin-top:10px" class="text">
+        <a href="index.html">Voltar à página principal</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
